@@ -4,7 +4,7 @@ import setuptools
 PACKAGE_NAME = "opensitua_core"
 
 def get_version():
-    VERSIONFILE = os.path.join(PACKAGE_NAME, '__init__.py')
+    VERSIONFILE = os.path.join( '__init__.py')
     initfile_lines = open(VERSIONFILE, 'rt').readlines()
     VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
     for line in initfile_lines:
