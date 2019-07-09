@@ -15,7 +15,7 @@ def get_version():
 
 setuptools.setup(
     name=PACKAGE_NAME,
-    version=version,
+    version=get_version(),
     author="Valerio Luzzi",
     author_email="valluzzi@gmail.com",
     description="core functions package",
