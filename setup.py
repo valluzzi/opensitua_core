@@ -6,8 +6,8 @@ PACKAGE_NAME = "opensitua_core"
 def get_version():
     print(os.getcwd())
     VERSIONFILE = os.path.join(PACKAGE_NAME, '__init__.py')
-    print(VERSIONFILE)
     initfile_lines = open(VERSIONFILE, 'rt').readlines()
+    print(initfile_lines)
     VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
     for line in initfile_lines:
         mo = re.search(VSRE, line, re.M)
