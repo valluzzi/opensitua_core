@@ -7,7 +7,7 @@ def get_version():
     print(os.getcwd())
     VERSIONFILE = os.path.join(PACKAGE_NAME, '__init__.py')
     initfile_lines = open(VERSIONFILE, 'rt').readlines()
-    VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
+    VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]\s*"
     for line in initfile_lines:
         mo = re.search(VSRE, line, re.M)
         print(line,mo)
