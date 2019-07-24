@@ -191,7 +191,7 @@ def httpResponse(text, status, start_response):
     response_headers = [('Content-type', 'text/html'), ('Content-Length', str(len(text)))]
     if start_response:
         start_response(status, response_headers)
-    return [text.encode('utf-8')]
+    return [b''+text]
 
 def httpResponseOK(text, start_response):
     """
