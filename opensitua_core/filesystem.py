@@ -120,7 +120,7 @@ def strtofile(text, filename, append=False):
     strtofile
     """
     try:
-        flag = "ab" if append else "wb"
+        flag = "a" if append else "w"
         mkdirs(justpath(filename))
         with open(filename, flag) as stream:
             if text:
