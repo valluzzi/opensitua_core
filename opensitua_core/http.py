@@ -140,26 +140,22 @@ def loadscripts(dirnames,type="js"):
 
     return text
 
-def loadlibs(dirnames,type="js"):
+def loadlibs(dirnames,type="js", DOCUMENT_ROOT):
     """
     loadlibs
     """
     text = ""
     dirnames = listify(dirnames, sep=",")
 
+    filever = DOCUMENT_ROOT + "/lib/js/core/version.js"
+    version = filetostr(filever)
+    if version:
+        version = version.replace("__VERSION__=", "").strip("'\"\t ;")
+
     for dirname in dirnames:
         filenames = ls(dirname, r'.*\.%s$'%(type), recursive=True)
         for filename in filenames:
-            DOCUMENT_ROOT = leftpart(normpath(filename), "/lib/")
-            filever = DOCUMENT_ROOT+"/lib/js/core/version.js"
-
-            print("version is:", filever, os.path.isfile(filever))
-
-
-            version = filetostr(filever)
-            if version:
-                version = version.replace("__VERSION__=","").strip("'\"\t ;")
-
+            #DOCUMENT_ROOT = leftpart(normpath(filename), "/lib/")
             webname = "/lib/" + rightpart(normpath(filename), "/lib/")
             if webname and webname != '/lib/':
                 if   type=="js":
@@ -259,8 +255,8 @@ def htmlResponse(environ, start_response=None, checkuser=False):
     import opensitua_core
 
     variables = {
-        "loadjs":  loadlibs(jss,"js"),
-        "loadcss": loadlibs(csss,"css"),
+        "loadjs":  loadlibs(jss, "js", DOCUMENT_ROOT),
+        "loadcss": loadlibs(csss, "css", DOCUMENT_ROOT),
         "APPNAME": juststem(workdir),
         "os": os,
         "math": math,

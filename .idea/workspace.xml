@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opensitua_core/http.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="193" column="33" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+            <state relative-caret-position="655">
+              <caret line="258" column="34" selection-start-line="258" selection-start-column="34" selection-end-line="258" selection-end-column="34" />
               <folding>
                 <element signature="e#924#949#0" expanded="true" />
               </folding>
@@ -145,6 +145,7 @@
       <find>gecosistema_core</find>
       <find>VERS</find>
       <find>templa</find>
+      <find>loadlibs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -354,8 +355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/opensitua_core/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="193" column="33" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+        <state relative-caret-position="655">
+          <caret line="258" column="34" selection-start-line="258" selection-start-column="34" selection-end-line="258" selection-end-column="34" />
           <folding>
             <element signature="e#924#949#0" expanded="true" />
           </folding>
