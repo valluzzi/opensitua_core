@@ -268,7 +268,7 @@ def htmlResponse(environ, start_response=None, checkuser=False):
         "environ":environ,
         "__file__":url
     }
-    html = t.render(variables).encode("utf-8","replace")
+    html = t.render(variables)  #.encode("utf-8","replace")
     return httpResponseOK(html, start_response)
 
 
