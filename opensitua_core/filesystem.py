@@ -136,7 +136,7 @@ def filetostr(filename):
     filetostr
     """
     try:
-        with open(filename, "rb") as stream:
+        with open(filename, "r") as stream:
             return stream.read()
     except:
         return None
@@ -146,7 +146,7 @@ def filetoarray(filename):
     filetoarray
     """
     try:
-        with open(filename, "rb") as stream:
+        with open(filename, "r") as stream:
             return stream.readlines()
     except:
         return []

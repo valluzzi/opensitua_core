@@ -158,8 +158,8 @@ def loadlibs(dirnames,type="js"):
 
             version = filetostr(filever)
             if version:
-
                 version = version.replace("__VERSION__=","").strip("'\"\t ;")
+
             webname = "/lib/" + rightpart(normpath(filename), "/lib/")
             if webname and webname != '/lib/':
                 if   type=="js":
