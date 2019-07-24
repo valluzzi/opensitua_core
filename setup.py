@@ -1,10 +1,13 @@
 import os,re
 import setuptools
 
-PACKAGE_NAME = "opensitua_core"
+PACKAGE_NAME    = "opensitua_core"
+AUTHOR          = "Valerio Luzzi"
+EMAIL           = "valluzzi@gmail.com"
+GITHUB          = "https://github.com/valluzzi/%s.git"%(PACKAGE_NAME)
+DESCRIPTION     = "A core functions package"
 
 def get_version():
-    print(os.getcwd())
     VERSIONFILE = os.path.join(PACKAGE_NAME, '__init__.py')
     initfile_lines = open(VERSIONFILE, 'rt').readlines()
     VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]\s*"
@@ -17,14 +20,14 @@ def get_version():
 setuptools.setup(
     name=PACKAGE_NAME,
     version=get_version(),
-    author="Valerio Luzzi",
-    author_email="valluzzi@gmail.com",
-    description="core functions package",
-    long_description="core functions package",
-    url="https://github.com/valluzzi/%s.git"%(PACKAGE_NAME),
+    author=AUTHOR,
+    author_email=EMAIL,
+    description=DESCRIPTION,
+    long_description=DESCRIPTION,
+    url=GITHUB,
     packages=setuptools.find_packages(),
     classifiers=(
-        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),
