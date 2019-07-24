@@ -290,6 +290,31 @@ def listify(text, sep=",", glue="\""):
         return text
     return [text]
 
+def mapify(text, sep=",", kvsep="=", strip_char=" ", glue= "\"", parsing=False):
+    """
+    Growup a dictionary from text string
+    """
+    # text = "hello=world,good=bye"
+    items = listify(text, sep, glue)
+    res = {}
+    for item in items:
+        item = item.strip(strip_char)
+        arr = item.split(kvsep, 1)
+        if len(arr)==1:
+            key, value = arr[0], ""
+        elif len(arr)==2:
+            key, value = arr
+        key, value = key.strip(strip_char).strip(glue), value.strip(strip_char).strip(glue)
+
+        if parsing:
+            #value  = parseValue(value)
+            value = (value)
+
+        res[key] = value
+
+    return res
+
+
 
 def replaceAll(text, search, replace):
     """

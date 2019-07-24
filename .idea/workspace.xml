@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f34b5f-20e6-41f4-bbf5-1b4393875c1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/opensitua_core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/http.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opensitua_core/strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/strings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-605">
-              <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
               <folding>
                 <element signature="e#944#960#0" expanded="true" />
               </folding>
@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opensitua_core/strings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="243" column="7" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
+            <state relative-caret-position="804">
+              <caret line="310" column="21" selection-start-line="310" selection-start-column="21" selection-end-line="310" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -158,13 +158,13 @@
       <list>
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/opensitua_core/platform.py" />
-        <option value="$PROJECT_DIR$/opensitua_core/strings.py" />
         <option value="$PROJECT_DIR$/opensitua_core/execution.py" />
         <option value="$PROJECT_DIR$/opensitua_core/compression.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/opensitua_core/stime.py" />
         <option value="$PROJECT_DIR$/opensitua_core/filesystem.py" />
         <option value="$PROJECT_DIR$/opensitua_core/http.py" />
+        <option value="$PROJECT_DIR$/opensitua_core/strings.py" />
         <option value="$PROJECT_DIR$/opensitua_core/__init__.py" />
       </list>
     </option>
@@ -314,13 +314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/opensitua_core/strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="243" column="7" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/opensitua_core/stime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -344,7 +337,7 @@
     <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-605">
-          <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
           <folding>
             <element signature="e#944#960#0" expanded="true" />
           </folding>
@@ -358,6 +351,13 @@
           <folding>
             <element signature="e#924#949#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opensitua_core/strings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="310" column="21" selection-start-line="310" selection-start-column="21" selection-end-line="310" selection-end-column="21" />
         </state>
       </provider>
     </entry>
