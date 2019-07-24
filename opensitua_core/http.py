@@ -256,7 +256,7 @@ def htmlResponse(environ, start_response=None, checkuser=False):
     env = Environment(loader=FileSystemLoader(workdir))
     t = env.get_template(index_html)
 
-    #import gecosistema_core
+    import opensitua_core
 
     variables = {
         "loadjs":  loadlibs(jss,"js"),
@@ -264,7 +264,7 @@ def htmlResponse(environ, start_response=None, checkuser=False):
         "APPNAME": juststem(workdir),
         "os": os,
         "math": math,
-        #"gecosistema_core": gecosistema_core,
+        "gecosistema_core": opensitua_core,
         "environ":environ,
         "__file__":url
     }
