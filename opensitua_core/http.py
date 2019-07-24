@@ -152,9 +152,13 @@ def loadlibs(dirnames,type="js"):
         for filename in filenames:
             DOCUMENT_ROOT = leftpart(normpath(filename), "/lib/")
             filever = DOCUMENT_ROOT+"/lib/js/core/version.js"
+
+            print("version is:", filever, os.path.isfile(filever))
+
+
             version = filetostr(filever)
             if version:
-                print("version is:",filever, os.path.isfile(filever))
+
                 version = version.replace("__VERSION__=","").strip("'\"\t ;")
             webname = "/lib/" + rightpart(normpath(filename), "/lib/")
             if webname and webname != '/lib/':
