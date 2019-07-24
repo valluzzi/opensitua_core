@@ -140,7 +140,7 @@ def loadscripts(dirnames,type="js"):
 
     return text
 
-def loadlibs(dirnames,type="js", DOCUMENT_ROOT):
+def loadlibs(dirnames, type, DOCUMENT_ROOT):
     """
     loadlibs
     """
