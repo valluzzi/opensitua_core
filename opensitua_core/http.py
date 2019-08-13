@@ -36,7 +36,7 @@ def urlencode(s):
     return urllib.parse.quote(s)
 
 def urldecode(s):
-    return urllib.parse.unquote(s).decode('utf8')
+    return urllib.parse.unquote(s)
 
 
 class Form:
@@ -49,13 +49,13 @@ class Form:
             self.form = {}
             for key in form:
                 value = form.getvalue(key)
-                value = urllib.parse.unquote(value).decode('utf8')
+                value = urllib.parse.unquote(value)
                 self.form[key] = value
         except:
             _environ = {}
             for key in environ:
                 value = environ[key]
-                value = urllib.parse.unquote(value).decode('utf8')
+                value = urllib.parse.unquote(value)
                 _environ[key] = value
             self.form = _environ
 
