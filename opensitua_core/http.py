@@ -24,20 +24,19 @@
 # -----------------------------------------------------------------------------
 from .filesystem import *
 from .strings import *
-#from .datatypes import *
 from jinja2 import Environment, FileSystemLoader
 import os,sys,math
-import json,base64, urllib
+import json,base64, urllib.parse
 from cgi import FieldStorage
 from builtins import str as unicode
 import sqlite3
 
 
 def urlencode(s):
-    return urllib.quote(s)
+    return urllib.parse.quote(s)
 
 def urldecode(s):
-    return urllib.unquote(s).decode('utf8')
+    return urllib.parse.unquote(s).decode('utf8')
 
 
 class Form:
@@ -50,13 +49,13 @@ class Form:
             self.form = {}
             for key in form:
                 value = form.getvalue(key)
-                value = urllib.unquote(value).decode('utf8')
+                value = urllib.parse.unquote(value).decode('utf8')
                 self.form[key] = value
         except:
             _environ = {}
             for key in environ:
                 value = environ[key]
-                value = urllib.unquote(value).decode('utf8')
+                value = urllib.parse.unquote(value).decode('utf8')
                 _environ[key] = value
             self.form = _environ
 
@@ -280,7 +279,7 @@ def check_user_permissions(environ):
 
     HTTP_COOKIE = getCookies(environ)
 
-    if file(filedb):
+    if os.path.isfile(filedb):
         conn = sqlite3.connect(filedb)
         conn.create_function("md5", 1, md5text)
         c = conn.cursor()
