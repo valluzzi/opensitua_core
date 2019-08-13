@@ -120,24 +120,6 @@ def webpath(filename, pivot ):
     """
     return "/" + rightpart(normpath(filename), pivot)
 
-def loadscripts(dirnames,type="js"):
-    """
-    loadjs
-    """
-    text = ""
-    dirnames = listify(dirnames, sep=",")
-
-    for dirname in dirnames:
-        filenames = ls(dirname, r'.*\.%s$'%(type), recursive=True)
-        for filename in filenames:
-            filename = webpath(filename,"/apps/")
-            if filename != '/':
-                if   type=="js":
-                    text += sformat("<script type='text/javascript' src='{filename}'></script>\n", {"filename": filename});
-                elif type=="css":
-                    text += sformat("<link href='{filename}' rel='stylesheet' type='text/css'/>\n",{"filename": filename});
-
-    return text
 
 def loadlibs(dirnames, type, DOCUMENT_ROOT):
     """
@@ -173,7 +155,7 @@ def template(filetpl, fileout=None, env = None):
     workdir = workdir if workdir else "."
     environ = Environment(loader=FileSystemLoader(workdir))
     t = environ.get_template(justfname(filetpl))
-    text = t.render(env).encode("utf-8")
+    text = t.render(env)
     if fileout:
         strtofile(text, fileout)
     return text

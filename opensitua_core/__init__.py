@@ -24,16 +24,16 @@
 #-------------------------------------------------------------------------------
 
 
-__version__ = '0.0.22'
+__version__ = '0.0.23'
 
 from .platform import *
 from .filesystem import *
 from .compression import *
 from .strings import *
 from .execution import *
-#from .datatypes import *
+from .datatypes import *
 from .stime import *
 from .http import *
-#from .xml_utils import *
+from .xml_utils import *
 #from .exceptions import *
 #from .maths import *
