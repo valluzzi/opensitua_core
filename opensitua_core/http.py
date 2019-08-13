@@ -76,7 +76,7 @@ class Form:
         """
         getvalue
         """
-        if self.form.has_key(key):
+        if key in self.form:
             return self.form[key]
         else:
             return default
