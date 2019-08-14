@@ -55,7 +55,7 @@ class Form:
             _environ = {}
             for key in environ:
                 value = environ[key]
-                value = urllib.parse.unquote(value)
+                #value = urllib.parse.unquote(value)
                 _environ[key] = value
             self.form = _environ
 
