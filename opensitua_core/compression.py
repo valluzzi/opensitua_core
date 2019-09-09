@@ -53,8 +53,8 @@ def compress(filenames, filezip="", removesrc=False):
     if (justext(filezip) == "zip"):
         with zipfile.ZipFile(filezip, 'w', zipfile.ZIP_DEFLATED) as archive:
             for filename in filenames:
-                if file(filename):
-                    archive.write(filename, filename)
+                if isfile(filename):
+                    archive.write(filename, os.path.relpath(filename, './'))
 
     if (justext(filezip) == "tgz"):
         with tarfile.open(filezip, "w") as archive:

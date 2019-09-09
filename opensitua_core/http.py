@@ -114,6 +114,35 @@ def get_post_form(environ):
     environ['wsgi.input'] = new_input
     return form
 
+
+class Params:
+    """
+    Params
+    """
+
+    def __init__(self, environ):
+        """
+        constructor
+        """
+        if environ and environ["REQUEST_METHOD"]=="GET":
+            q = parse_qs(environ['QUERY_STRING'])
+            self.q = {}
+            for key in q:
+                self.q[key] = [ escape(item) for item in q[key]]
+
+    def getvalue(self, key, defaultValue=None):
+        """
+        getvalue
+        """
+        if key in self.q:
+            if len(self.q[key])>1
+                return self.q[key]
+            else:
+                self.q[key][0]
+        else:
+            return defaultValue
+
+
 def webpath(filename, pivot ):
     """
     webpath -  pivot = "/apps/"
@@ -159,6 +188,26 @@ def template(filetpl, fileout=None, env = None):
     if fileout:
         strtofile(text, fileout)
     return text
+
+
+def httpDownload(filename, start_response):
+    """
+    httpDownload
+    """
+    response_headers = [
+        ("Content-Description", "File Transfer"),
+        ("Content-type", "application/octet-stream"),
+        ("Content-Disposition","attachment; filename=\"%s\""%(justfname(filename))),
+        ("Content-Transfer-Encoding", "binary"),
+        ('Content-Length', "%s" % len(data))
+    ]
+
+    with open(filename,'rb') as stream:
+        start_response("200 OK", response_headers)
+        block_size = 4096
+        return iter(lambda: stream.read(block_size), '')
+
+
 
 def httpResponse(text, status, start_response):
     """
