@@ -66,6 +66,7 @@ class Form:
                         self.form[key] = base64.b64decode(self.form[key])
                     except:
                         pass
+
     def keys(self):
         """
         keys
@@ -125,20 +126,33 @@ class Params:
         constructor
         """
         if environ and environ["REQUEST_METHOD"]=="GET":
-            q = parse_qs(environ['QUERY_STRING'])
-            self.q = {}
-            for key in q:
-                self.q[key] = [ escape(item) for item in q[key]]
+            request_body = environ['QUERY_STRING']
 
-    def get(self, key, defaultValue=None):
+        elif environ and environ["REQUEST_METHOD"]=="POST":
+            # the environment variable CONTENT_LENGTH may be empty or missing
+            try:
+                request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+            except (ValueError):
+                request_body_size = 0
+
+            # When the method is POST the variable will be sent
+            # in the HTTP request body which is passed by the WSGI server
+            # in the file like wsgi.input environment variable.
+            request_body = environ['wsgi.input'].read(request_body_size)
+        else:
+            request_body = ""
+
+        q = parse_qs(request_body)
+        self.q = {}
+        for key in q:
+            self.q[key] = [escape(item) for item in q[key]]
+
+    def getlist(self, key, defaultValue=[]):
         """
-        get
+        getlist
         """
         if key in self.q:
-            if len(self.q[key])>1:
-                return self.q[key]
-            else:
-                return self.q[key][0]
+            return self.q[key]
         else:
             return defaultValue
 
@@ -146,7 +160,23 @@ class Params:
         """
         getvalue
         """
-        return self.get(key, defaultValue)
+        if key in self.q:
+            if len(self.q[key])>0:
+                return self.q[key][0]
+        else:
+            return defaultValue
+
+    def get(self, key, defaultValue=None):
+        """
+        get
+        """
+        if key in self.q:
+            if len(self.q[key])==1:
+                return self.q[key][0]
+            elif len(self.q[key])>1:
+                return self.q[key]
+        else:
+            return defaultValue
 
 
 def webpath(filename, pivot ):
