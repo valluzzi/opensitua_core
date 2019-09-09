@@ -130,9 +130,9 @@ class Params:
             for key in q:
                 self.q[key] = [ escape(item) for item in q[key]]
 
-    def getvalue(self, key, defaultValue=None):
+    def get(self, key, defaultValue=None):
         """
-        getvalue
+        get
         """
         if key in self.q:
             if len(self.q[key])>1:
@@ -141,6 +141,12 @@ class Params:
                 return self.q[key][0]
         else:
             return defaultValue
+
+    def getvalue(self, key, defaultValue=None):
+        """
+        getvalue
+        """
+        return self.get(key, defaultValue)
 
 
 def webpath(filename, pivot ):
