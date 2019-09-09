@@ -24,7 +24,7 @@
 #-------------------------------------------------------------------------------
 
 
-__version__ = '0.0.27'
+__version__ = '0.0.28'
 
 from .platform import *
 from .filesystem import *
@@ -37,3 +37,7 @@ from .http import *
 from .xml_utils import *
 #from .exceptions import *
 #from .maths import *
+
+
+def get_version():
+    return __version__
