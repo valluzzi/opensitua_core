@@ -135,10 +135,10 @@ class Params:
         getvalue
         """
         if key in self.q:
-            if len(self.q[key])>1
+            if len(self.q[key])>1:
                 return self.q[key]
             else:
-                self.q[key][0]
+                return self.q[key][0]
         else:
             return defaultValue
 
