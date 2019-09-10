@@ -121,6 +121,8 @@ def strtofile(text, filename, append=False):
     """
     try:
         flag = "a" if append else "w"
+        if isinstance(text,(bytes,)):
+            flag+='b'
         mkdirs(justpath(filename))
         with open(filename, flag) as stream:
             if text:

@@ -150,26 +150,18 @@ class Params:
         return self.q.keys()
 
 
-    def getlist(self, key, defaultValue=[]):
-        """
-        getlist
-        """
-        if key in self.q:
-            return self.q[key]
-        else:
-            return defaultValue
-
     def getvalue(self, key, defaultValue=None):
         """
         getvalue
         """
+        value = defaultValue
         if key in self.q:
             if isinstance(self.q[key],(tuple,list)) and len(self.q[key])>0:
-                return self.q[key][0]
+                value = self.q[key][0]
             else:
-                return self.q[key]
-        else:
-            return defaultValue
+                value = self.q[key]
+
+        return value
 
     def get(self, key, defaultValue=None):
         """
