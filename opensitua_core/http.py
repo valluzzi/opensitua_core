@@ -147,6 +147,13 @@ class Params:
         for key in q:
             self.q[key] = [escape(item) for item in q[key]]
 
+    def keys(self):
+        """
+        keys
+        """
+        return self.q.keys()
+
+
     def getlist(self, key, defaultValue=[]):
         """
         getlist
