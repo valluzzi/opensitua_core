@@ -138,7 +138,7 @@ class Params:
             env_copy = environ.copy()
             q = FieldStorage(fp=environ["wsgi.input"], environ=env_copy, keep_blank_values=True)
             for key in q:
-                self.q[key] = q.getvalue(key)
+                self.q[key] = [q.getvalue(key)]
 
 
 
