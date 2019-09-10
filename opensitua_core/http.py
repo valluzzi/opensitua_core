@@ -138,9 +138,7 @@ class Params:
             env_copy = environ.copy()
             q = FieldStorage(fp=environ["wsgi.input"], environ=env_copy, keep_blank_values=True)
             for key in q:
-                if not key in self.q:
-                    self.q[key] = []
-                self.q[key].append(q.getvalue(key))
+                self.q[key] = q.getvalue(key)
 
 
 
@@ -166,7 +164,7 @@ class Params:
         getvalue
         """
         if key in self.q:
-            if len(self.q[key])>0:
+            if isinstance(self.q[key],(tuple,list)) and len(self.q[key])>0:
                 return self.q[key][0]
         else:
             return defaultValue
@@ -176,9 +174,9 @@ class Params:
         get
         """
         if key in self.q:
-            if len(self.q[key])==1:
+            if isinstance(self.q[key],(tuple,list)) and len(self.q[key])==1:
                 return self.q[key][0]
-            elif len(self.q[key])>1:
+            elif isinstance(self.q[key],(tuple,list)) and len(self.q[key])>1:
                 return self.q[key]
         else:
             return defaultValue
