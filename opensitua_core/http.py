@@ -134,17 +134,9 @@ class Params:
                 self.q[key] = [escape(item) for item in q[key]]
 
         elif environ and environ["REQUEST_METHOD"]=="POST":
-            # the environment variable CONTENT_LENGTH may be empty or missing
-            try:
-                request_body_size = int(environ.get('CONTENT_LENGTH', 0))
-            except (ValueError):
-                request_body_size = 0
 
-            # When the method is POST the variable will be sent
-            # in the HTTP request body which is passed by the WSGI server
-            # in the file like wsgi.input environment variable.
-            request_body = environ['wsgi.input'].read(request_body_size)
-            q = parse_qs(request_body)
+            env_copy = environ.copy()
+            q = FieldStorage(fp=environ["wsgi.input"], environ=env_copy, keep_blank_values=True)
             for key in q:
                 self.q[key] = q[key]
 
