@@ -166,6 +166,8 @@ class Params:
         if key in self.q:
             if isinstance(self.q[key],(tuple,list)) and len(self.q[key])>0:
                 return self.q[key][0]
+            else:
+                return self.q[key]
         else:
             return defaultValue
 
