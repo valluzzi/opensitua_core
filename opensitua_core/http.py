@@ -125,8 +125,13 @@ class Params:
         """
         constructor
         """
+        self.q = {}
+
         if environ and environ["REQUEST_METHOD"]=="GET":
             request_body = environ['QUERY_STRING']
+            q = parse_qs(request_body)
+            for key in q:
+                self.q[key] = [escape(item) for item in q[key]]
 
         elif environ and environ["REQUEST_METHOD"]=="POST":
             # the environment variable CONTENT_LENGTH may be empty or missing
@@ -139,13 +144,12 @@ class Params:
             # in the HTTP request body which is passed by the WSGI server
             # in the file like wsgi.input environment variable.
             request_body = environ['wsgi.input'].read(request_body_size)
-        else:
-            request_body = ""
+            q = parse_qs(request_body)
+            for key in q:
+                self.q[key] = q[key]
 
-        q = parse_qs(request_body)
-        self.q = {}
-        for key in q:
-            self.q[key] = [escape(item) for item in q[key]]
+
+
 
     def keys(self):
         """
