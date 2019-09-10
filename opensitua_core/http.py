@@ -136,19 +136,24 @@ class Params:
         elif environ and environ["REQUEST_METHOD"]=="POST":
 
             env_copy = environ.copy()
+            env_copy['QUERY_STRING']=''
             q = FieldStorage(fp=environ["wsgi.input"], environ=env_copy, keep_blank_values=True)
             for key in q:
                 self.q[key] = q.getvalue(key)
 
-
-
+        if "encoded" in self.q and self.q["encoded"] in ("true","1",1):
+            for key in q:
+                if not key in ("encoded","encrypted"):
+                    try:
+                        self.q[key] = base64.b64decode(self.q[key])
+                    except:
+                        pass
 
     def keys(self):
         """
         keys
         """
         return self.q.keys()
-
 
     def getvalue(self, key, defaultValue=None):
         """
@@ -172,8 +177,8 @@ class Params:
                 return self.q[key][0]
             else:
                 return self.q[key]
-        else:
-            return defaultValue
+
+        return defaultValue
 
 
 def webpath(filename, pivot ):

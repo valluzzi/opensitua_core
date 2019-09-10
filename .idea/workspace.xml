@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f34b5f-20e6-41f4-bbf5-1b4393875c1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/opensitua_core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/filesystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/filesystem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opensitua_core/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/http.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opensitua_core/http.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-665">
-              <caret line="139" column="25" lean-forward="true" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+            <state relative-caret-position="406">
+              <caret line="143" column="71" lean-forward="true" selection-start-line="143" selection-start-column="71" selection-end-line="143" selection-end-column="71" />
               <folding>
                 <element signature="e#924#949#0" expanded="true" />
               </folding>
@@ -41,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="-237">
               <caret line="123" column="37" lean-forward="true" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
               <folding>
                 <element signature="e#944#960#0" expanded="true" />
@@ -100,8 +99,8 @@
         <option value="$PROJECT_DIR$/opensitua_core/strings.py" />
         <option value="$PROJECT_DIR$/opensitua_core/xml_utils.py" />
         <option value="$PROJECT_DIR$/opensitua_core/compression.py" />
-        <option value="$PROJECT_DIR$/opensitua_core/http.py" />
         <option value="$PROJECT_DIR$/opensitua_core/filesystem.py" />
+        <option value="$PROJECT_DIR$/opensitua_core/http.py" />
         <option value="$PROJECT_DIR$/opensitua_core/__init__.py" />
       </list>
     </option>
@@ -301,22 +300,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/opensitua_core/http.py">
+    <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-665">
-          <caret line="139" column="25" lean-forward="true" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+        <state relative-caret-position="-237">
+          <caret line="123" column="37" lean-forward="true" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
           <folding>
-            <element signature="e#924#949#0" expanded="true" />
+            <element signature="e#944#960#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
+    <entry file="file://$PROJECT_DIR$/opensitua_core/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="123" column="37" lean-forward="true" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+        <state relative-caret-position="406">
+          <caret line="143" column="71" lean-forward="true" selection-start-line="143" selection-start-column="71" selection-end-line="143" selection-end-column="71" />
           <folding>
-            <element signature="e#944#960#0" expanded="true" />
+            <element signature="e#924#949#0" expanded="true" />
           </folding>
         </state>
       </provider>
