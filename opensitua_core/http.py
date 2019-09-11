@@ -26,7 +26,7 @@ from .filesystem import *
 from .strings import *
 from jinja2 import Environment, FileSystemLoader
 import os,sys,math
-import json,base64, urllib.parse
+import json,base64
 from cgi import FieldStorage, parse_qs, escape
 from builtins import str as unicode
 import sqlite3
