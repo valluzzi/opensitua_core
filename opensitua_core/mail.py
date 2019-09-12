@@ -50,7 +50,7 @@ def system_mail(dest, Body="", Subject=None, fileconf="mail.conf", verbose=False
         msg['To'] = ",".join(receivers)
         msg['Subject'] = Subject
         #msg.attach(MIMEText(Body,"html"))
-        msg.set_content(html)
+        msg.set_content(Body)
 
         try:
             # mailServer = smtplib.SMTP('smtp.gmail.com', 587)
