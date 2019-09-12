@@ -24,7 +24,7 @@
 #-------------------------------------------------------------------------------
 
 
-__version__ = '0.0.45'
+__version__ = '0.0.46'
 
 from .platform import *
 from .filesystem import *
@@ -35,6 +35,7 @@ from .datatypes import *
 from .stime import *
 from .http import *
 from .xml_utils import *
+from .mail import *
 #from .exceptions import *
 #from .maths import *
 
