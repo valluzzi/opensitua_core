@@ -96,6 +96,12 @@ class Params:
 
         return defaultValue
 
+    def toObject(self):
+        return self.q
+
+    def toDictionary(self):
+        return self.q
+
 
 def webpath(filename, pivot ):
     """
