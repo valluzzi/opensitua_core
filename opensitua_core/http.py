@@ -101,7 +101,7 @@ class Params:
 
     def toDictionary(self):
         params = {}
-        if key in self.q:
+        for key in self.q:
             params[key] = self.get(key)
         return params
 
