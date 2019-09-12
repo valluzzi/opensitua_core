@@ -24,8 +24,10 @@
 import smtplib, json
 from smtplib import SMTP_SSL as SMTP
 from email.message import EmailMessage
+from email.mime.text import MIMEText
 from .strings import *
 from .filesystem import *
+
 # -------------------------------------------------------------------------------
 #   mailto
 # -------------------------------------------------------------------------------
@@ -49,8 +51,8 @@ def system_mail(dest, Body="", Subject=None, fileconf="mail.conf", verbose=False
         msg['From'] = username
         msg['To'] = ",".join(receivers)
         msg['Subject'] = Subject
-        #msg.attach(MIMEText(Body,"html"))
-        msg.set_content(Body)
+        msg.attach(MIMEText(Body,"html"))
+
 
         try:
             # mailServer = smtplib.SMTP('smtp.gmail.com', 587)
