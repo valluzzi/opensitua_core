@@ -100,7 +100,10 @@ class Params:
         return self.q
 
     def toDictionary(self):
-        return self.q
+        params = {}
+        if key in self.q:
+            params[key] = self.get(key)
+        return params
 
 
 def webpath(filename, pivot ):
