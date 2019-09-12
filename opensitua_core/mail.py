@@ -47,11 +47,12 @@ def system_mail(dest, Body="", Subject=None, fileconf="mail.conf", verbose=False
         port = int(conf["port"]) if "port" in conf else 465
 
         #msg = MIMEMultipart()
-        msg = EmailMessage()
+        #msg = EmailMessage()
+        msg = MIMEText(Body, "html")
         msg['From'] = username
         msg['To'] = ",".join(receivers)
         msg['Subject'] = Subject
-        msg.attach(MIMEText(Body,"html"))
+
 
 
         try:
