@@ -56,6 +56,16 @@ class Params:
             q = FieldStorage(fp=environ["wsgi.input"], environ=env_copy, keep_blank_values=True)
             for key in q:
                 self.q[key] = q.getvalue(key)
+                #print(key, "=", len(q.getvalue(key)))
+
+            #load extra query string info:
+            request_body = environ['QUERY_STRING']
+            q = parse_qs(request_body)
+            for key in q:
+                self.q[key] = [escape(item) for item in q[key]]
+
+        if environ and environ["DOCUMENT_ROOT"]:
+            self.q["DOCUMENT_ROOT"] = environ["DOCUMENT_ROOT"]
 
         if "encoded" in self.q and self.q["encoded"] in ("true","1",1):
             for key in q:
@@ -64,6 +74,8 @@ class Params:
                         self.q[key] = base64.b64decode(self.q[key])
                     except:
                         pass
+
+
 
     def keys(self):
         """

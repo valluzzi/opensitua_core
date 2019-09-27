@@ -290,6 +290,15 @@ def listify(text, sep=",", glue="\""):
         return text
     return [text]
 
+def arr2dict(arr,keyname="key",valuename="value"):
+    """
+    arr2dict -  transform an array to dictionary key:
+    """
+    res = {}
+    for item in arr:
+        res[item[keyname]]= item[valuename] if valuename in item else None
+    return res
+
 def mapify(text, sep=",", kvsep="=", strip_char=" ", glue= "\"", parsing=False):
     """
     Growup a dictionary from text string

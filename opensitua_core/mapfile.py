@@ -1,6 +1,6 @@
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # Licence:
-# Copyright (c) 2012-2019 Valerio for Gecosistema S.r.l.
+# Copyright (c) 2012-2019 Luzzi Valerio 
 #
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
@@ -15,31 +15,23 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 #
-# Name:        opensitua_core
+# Name:        mapfile.py
 # Purpose:
 #
 # Author:      Luzzi Valerio
 #
-# Created:    08/07/2019
-#-------------------------------------------------------------------------------
+# Created:     26/09/2019
+# -------------------------------------------------------------------------------
+from .strings import isstring
 
+def PixelOf(value,unit,style="solid"):
 
-__version__ = '0.0.55'
-
-from .platform import *
-from .filesystem import *
-from .compression import *
-from .strings import *
-from .execution import *
-from .datatypes import *
-from .stime import *
-from .http import *
-from .xml_utils import *
-from .mail import *
-#from .exceptions import *
-#from .maths import *
-from .mapfile import *
-
-
-def get_version():
-    return __version__
+    if isstring(value):
+        value = value.replace(",",".")
+    if float(value)<=0.1 and style=="solid" :
+        return 0.5
+    elif unit=="Pixel":
+        return round(float(value),2)
+    elif unit =="MM":
+        return round(float(value)*3.779,2)
+    return -1

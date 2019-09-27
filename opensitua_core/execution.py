@@ -21,7 +21,7 @@
 #
 # Created:     27/07/2018
 # -----------------------------------------------------------------------------
-import os,sys,ast
+import os,sys,re,ast
 import subprocess
 from .strings import *
 from .filesystem import *
@@ -60,6 +60,13 @@ def Exec(command, env={}, precond=[], postcond=[], remove=[], skipIfExists=False
         print(sformat(command, env))
     if res:
 
+        # patch command facility
+        #this remove new lines and tabs and reduce space
+        print("removing new lines and tabs and reducing space...")
+
+        command = re.sub(r'\s+', ' ',command).strip()
+        print("<%s>" % command)
+
         if isWindows():
             command = sformat(command, env)
             args = command
@@ -68,6 +75,7 @@ def Exec(command, env={}, precond=[], postcond=[], remove=[], skipIfExists=False
             command = sformat(command, env)
             command = normalizestring(command)
             args = listify(command, " ", '"')
+
         if nowait:
             p = subprocess.Popen(args, stdout=subprocess.PIPE)
             outdata = p.communicate()
