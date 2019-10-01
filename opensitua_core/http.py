@@ -25,7 +25,7 @@
 from .filesystem import *
 from .strings import *
 from jinja2 import Environment, FileSystemLoader
-import os,sys,math
+import os,sys,re,math
 import json,base64
 from cgi import FieldStorage, parse_qs, escape
 from builtins import str as unicode
@@ -264,6 +264,8 @@ def htmlResponse(environ, start_response=None, checkuser=False):
         "loadcss": loadlibs(csss, "css", DOCUMENT_ROOT),
         "APPNAME": juststem(workdir),
         "os": os,
+        "sys":sys,
+        "re":res,
         "math": math,
         "gecosistema_core": opensitua_core,
         "environ":environ,

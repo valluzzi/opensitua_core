@@ -62,10 +62,7 @@ def Exec(command, env={}, precond=[], postcond=[], remove=[], skipIfExists=False
 
         # patch command facility
         #this remove new lines and tabs and reduce space
-        print("removing new lines and tabs and reducing space...")
-
         command = re.sub(r'\s+', ' ',command).strip()
-        print("<%s>" % command)
 
         if isWindows():
             command = sformat(command, env)
