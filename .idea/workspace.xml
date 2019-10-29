@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f34b5f-20e6-41f4-bbf5-1b4393875c1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/http.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/opensitua_core/stime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="39" selection-end-column="13" />
+            <state relative-caret-position="864">
+              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
               <folding>
                 <element signature="e#925#954#0" expanded="true" />
               </folding>
@@ -100,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -161,7 +160,6 @@
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/opensitua_core/platform.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/opensitua_core/stime.py" />
         <option value="$PROJECT_DIR$/opensitua_core/xml_utils.py" />
         <option value="$PROJECT_DIR$/opensitua_core/compression.py" />
         <option value="$PROJECT_DIR$/opensitua_core/filesystem.py" />
@@ -171,6 +169,7 @@
         <option value="$PROJECT_DIR$/opensitua_core/__init__.py" />
         <option value="$PROJECT_DIR$/opensitua_core/execution.py" />
         <option value="$PROJECT_DIR$/opensitua_core/http.py" />
+        <option value="$PROJECT_DIR$/opensitua_core/stime.py" />
       </list>
     </option>
   </component>
@@ -188,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,6 +203,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,6 +241,14 @@
       <option name="presentableId" value="Default" />
       <updated>1562671438845</updated>
     </task>
+    <task id="LOCAL-00001" summary="added now() function">
+      <created>1572352296742</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572352296742</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -254,11 +261,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-1088" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47181964" visible="true" weight="0.096066564" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.52818036" side_tool="true" visible="true" weight="0.096066564" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47040498" visible="true" weight="0.09701493" />
+      <window_info id="Structure" order="1" sideWeight="0.529595" side_tool="true" visible="true" weight="0.09701493" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
@@ -277,6 +284,10 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added now() function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added now() function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -359,16 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/opensitua_core/stime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="39" selection-end-column="13" />
-          <folding>
-            <element signature="e#925#954#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/opensitua_core/platform.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
@@ -419,6 +420,16 @@
           <caret line="211" column="31" selection-start-line="211" selection-start-column="31" selection-end-line="211" selection-end-column="31" />
           <folding>
             <element signature="e#944#960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/opensitua_core/stime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+          <folding>
+            <element signature="e#925#954#0" expanded="true" />
           </folding>
         </state>
       </provider>
