@@ -64,8 +64,11 @@ class Params:
             for key in q:
                 self.q[key] = [escape(item) for item in q[key]]
 
-        if environ and environ["DOCUMENT_ROOT"]:
+        if environ and "DOCUMENT_ROOT" in environ:
             self.q["DOCUMENT_ROOT"] = environ["DOCUMENT_ROOT"]
+
+        if environ and "HTTP_COOKIE" in environ:
+            self.q["HTTP_COOKIE"] = mapify(environ["HTTP_COOKIE"], ";")
 
         if "encoded" in self.q and self.q["encoded"] in ("true","1",1):
             for key in q:

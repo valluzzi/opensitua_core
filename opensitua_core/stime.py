@@ -38,3 +38,15 @@ def strftime(frmt, text):
         return date.strftime(frmt)
 
     return ""
+
+def now():
+    """
+    now - alias of datetime.datetime.now()
+    """
+    return datetime.datetime.now()
+
+def total_seconds_from( t1 ):
+    """
+    total_seconds_from - return seconds elapsed from t1
+    """
+    return (dataetime.datetime.now()-t1).total_seconds()
