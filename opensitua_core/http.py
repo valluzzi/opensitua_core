@@ -43,6 +43,9 @@ class Params:
         """
         self.q = {}
 
+        environ["DOCUMENT_WWW"] = os.path.abspath(environ["DOCUMENT_ROOT"] + "/var/www")
+        self.q["DOCUMENT_WWW"] = environ["DOCUMENT_WWW"]
+
         if environ and environ["REQUEST_METHOD"]=="GET":
             request_body = environ['QUERY_STRING']
             q = parse_qs(request_body)
