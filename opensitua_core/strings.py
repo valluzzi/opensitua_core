@@ -162,28 +162,28 @@ def endswith(text, elenco, casesensitive=True):
     return False
 
 
-def leftpart(text, sep):
+def leftpart(text, sep,  included = False):
     """
     leftpart
     """
     if isstring(text):
         arr = text.split(sep, 1)
         if len(arr) >= 1:
-            return arr[0]
+            return arr[0] + sep if included else arr[0]
     elif isarray(text):
-        return [leftpart(item, sep) for item in text]
+        return [leftpart(item, sep, included) for item in text]
 
 
-def rightpart(text, sep):
+def rightpart(text, sep, included = False):
     """
     rightpart
     """
     if isstring(text):
         arr = text.split(sep, 1)
         if len(arr) > 1:
-            return arr[1]
+            return sep + arr[1] if included else arr[1]
     elif isarray(text):
-        return [rightpart(item, sep) for item in text]
+        return [rightpart(item, sep, included) for item in text]
     return ""
 
 
