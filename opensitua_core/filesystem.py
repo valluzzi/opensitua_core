@@ -356,7 +356,7 @@ def md5text(text):
     """
     if (text!=None):
         hash = hashlib.md5()
-        hash.update(text)
+        hash.update(text.encode("utf-8"))
         return hash.hexdigest()
     return None
 
