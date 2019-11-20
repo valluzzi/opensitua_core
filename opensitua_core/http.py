@@ -271,7 +271,7 @@ def htmlResponse(environ, start_response=None, checkuser=False):
         "APPNAME": juststem(workdir),
         "os": os,
         "sys":sys,
-        "re":res,
+        "re":re,
         "math": math,
         "gecosistema_core": opensitua_core,
         "environ":environ,
