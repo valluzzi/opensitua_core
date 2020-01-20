@@ -217,7 +217,8 @@ def JSONResponse(obj, start_response):
     JSONResponse
     """
     if isstring(obj):
-        res = obj
+        res = json.loads(obj)
+        res = unicode(json.dumps(res))
     elif isinstance(obj, (dict, list)):
         res = unicode(json.dumps(obj))
     else:
@@ -311,3 +312,4 @@ def check_user_permissions(environ):
         return mail if user_enabled else False
 
     return False
+

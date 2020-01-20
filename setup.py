@@ -33,7 +33,7 @@ setuptools.setup(
     ),
     install_requires=['jinja2',
                       'six', 'argparse', 'xmljson',
-                      'openpyxl',
+                      'openpyxl','requests',
                       'xlrd', 'xlwt', 'xlutils', 'numpy',
                       'rarfile']
 )

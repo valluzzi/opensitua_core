@@ -64,7 +64,7 @@ def parsexml(filename, patching=True):
 
         # text = text.replace("&lt;","<")
     # end patch
-    data = bf.data(fromstring(text))
+    data = bf.data(fromstring(text.encode("utf-8")))
     return data
 
 def readmssql(filename):
