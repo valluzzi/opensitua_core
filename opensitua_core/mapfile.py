@@ -23,6 +23,7 @@
 # Created:     26/09/2019
 # -------------------------------------------------------------------------------
 from .strings import isstring
+from .stime import strftime
 import requests
 
 def PixelOf(value,unit,style="solid"):
