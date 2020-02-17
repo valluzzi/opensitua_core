@@ -37,9 +37,9 @@ def hexcolor(text):
         text = re.sub(r',',' ',text)
         arr = text.split(' ')
         arr = [int(item) for item in arr]
-        if len(arr==3):
+        if len(arr)==3:
             return "%02x%02x%02x"%tuple(arr)
-        if len(arr==4):
+        if len(arr)==4:
             return "#%02x%02x%02x%02x"%tuple(arr)
 
     return text
