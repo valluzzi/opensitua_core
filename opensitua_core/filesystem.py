@@ -60,7 +60,7 @@ def normpath(pathname):
     """
     if not pathname:
         return ""
-    return os.path.normpath(pathname.replace("\\", "/")).replace("\\", "/")
+    return os.path.normpath(pathname).replace("\\", "/")
 
 def justdrive(pathname):
     """

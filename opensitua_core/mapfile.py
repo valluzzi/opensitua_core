@@ -24,7 +24,25 @@
 # -------------------------------------------------------------------------------
 from .strings import isstring
 from .stime import strftime
-import requests
+import re, requests
+
+
+def hexcolor(text):
+    """
+    hexcolor
+    """
+    if text.startsWith("#"):
+        return text
+    else:
+        text = re.sub(r',',' ',text)
+        arr = text.split(' ')
+        arr = [int(item) for item in arr]
+        if len(arr==3):
+            return "%02x%02x%02x"%tuple(arr)
+        if len(arr==4):
+            return "#%02x%02x%02x%02x"%tuple(arr)
+
+    return text
 
 def PixelOf(value,unit,style="solid"):
 
