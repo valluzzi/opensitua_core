@@ -31,7 +31,7 @@ def hexcolor(text):
     """
     hexcolor
     """
-    if text.startsWith("#"):
+    if text.startswith("#"):
         return text
     else:
         text = re.sub(r',',' ',text)
