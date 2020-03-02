@@ -217,13 +217,16 @@ def JSONResponse(obj, start_response):
     JSONResponse
     """
     if isstring(obj):
-        res = json.loads(obj)
-        res = unicode(json.dumps(res))
+        text = obj
     elif isinstance(obj, (dict, list)):
-        res = unicode(json.dumps(obj))
+        text = unicode(json.dumps(obj))
     else:
-        res = obj
-    return httpResponse(res, "200 OK", start_response)
+        text = obj
+
+    response_headers = [('Content-type', 'application/json'), ('Content-Length', str(len(text)))]
+    if start_response:
+        start_response(status, response_headers)
+    return [text.encode('utf-8')]
 
 def getCookies(environ):
     """
