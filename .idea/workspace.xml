@@ -93,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="389" column="39" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="39" />
+            <state relative-caret-position="333">
+              <caret line="402" column="53" selection-start-line="402" selection-start-column="53" selection-end-line="402" selection-end-column="53" />
               <folding>
                 <element signature="e#944#960#0" expanded="true" />
               </folding>
@@ -494,8 +494,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/opensitua_core/filesystem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="389" column="39" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="39" />
+        <state relative-caret-position="333">
+          <caret line="402" column="53" selection-start-line="402" selection-start-column="53" selection-end-line="402" selection-end-column="53" />
           <folding>
             <element signature="e#944#960#0" expanded="true" />
           </folding>

@@ -396,11 +396,11 @@ def upload( buffer, filename, chunksize=4096):
         remove(filename)
         offset = 0
         with open(filename, 'wb') as f:
-            data = buffer[offset:offset+SIZE]
+            data = buffer[offset:offset+chunksize]
             offset+=chunksize
             while data:
                 f.write(data)
-                data = buffer[offset:offset+SIZE]
+                data = buffer[offset:offset+chunksize]
                 offset+=chunksize
             return  True
     except Exception as ex:
