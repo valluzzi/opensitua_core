@@ -387,4 +387,21 @@ def b64(filename):
 
     return base64.standard_b64encode(data)
 
-
+def upload( buffer, filename, chunksize=4096):
+    """
+    upload: save a buffer to a file 
+    """
+    try:
+        mkdirs(justpath(filename))
+        remove(filename)
+        offset = 0
+        with open(filename, 'wb') as f:
+            data = buffer[offset:offset+SIZE]
+            offset+=chunksize
+            while data:
+                f.write(data)
+                data = buffer[offset:offset+SIZE]
+                offset+=chunksize
+            return  True
+    except Exception as ex:
+        return False
