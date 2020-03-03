@@ -389,7 +389,7 @@ def b64(filename):
 
 def upload( buffer, filename, chunksize=4096):
     """
-    upload: save a buffer to a file 
+    upload: save a buffer to a file
     """
     try:
         mkdirs(justpath(filename))
@@ -404,4 +404,5 @@ def upload( buffer, filename, chunksize=4096):
                 offset+=chunksize
             return  True
     except Exception as ex:
+        print(ex)
         return False
