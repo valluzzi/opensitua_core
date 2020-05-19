@@ -308,8 +308,7 @@ def check_user_permissions(environ):
         WHERE ('{__token__}' LIKE md5([token]||strftime('%Y-%m-%d','now')) AND [enabled])
                 OR ([mail] LIKE 'everyone' AND [enabled]);"""
         sql = sformat(sql, HTTP_COOKIE)
-        print(sql)
-        print("---")
+ 
         c.execute(sql)
         (user_enabled,mail) = c.fetchone()
         conn.close()
