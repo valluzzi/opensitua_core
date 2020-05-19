@@ -217,14 +217,18 @@ def remove(files):
 def mkdirs(pathname):
     """
     mkdirs - create a folder
+    mkdirs("hello/world)
+    mkdirs("hello/world/file.tif) #file.tif must exists
     """
-    try:
-        if file(pathname):
-            pathname = justpath(pathname)
-        os.makedirs(pathname)
-    except:
-        pass
-    return directory(pathname)
+    if not os.path.isdir(pathname):
+        try:
+            if os.path.isfile(pathname):
+                pathname = justpath(pathname)
+            os.makedirs(pathname)
+        except:
+            pass
+        return os.path.isdir(pathname)
+    return True
 
 def chdir(pathname):
     """
