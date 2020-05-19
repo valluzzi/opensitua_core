@@ -203,6 +203,7 @@ def remove(files):
     """
     remove
     """
+    res=True
     for item in listify(files):
         try:
             if os.path.isfile(item):
@@ -211,8 +212,8 @@ def remove(files):
                 shutil.rmtree(item)
         except Exception as ex:
             print(ex)
-            pass
-
+            res=False
+    return res
 
 def mkdirs(pathname):
     """
