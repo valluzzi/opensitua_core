@@ -154,3 +154,17 @@ def Rscript(command, additional_lib="", verbose=False):
             print( "-->" + item)
     res = res[-1] if len(res) > 0 else ""
     return res
+
+def kill_by_name(name):
+    """
+    kill_by_name
+    """
+    if isWindows():
+        os.system("taskkill /f /im "+name)
+    else:
+        p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
+        output, error = p.communicate()
+        for line in output.splitlines():
+            if name in str(line):
+                pid = int(line.split(None, 1)[0])
+                os.kill(pid, 9)
