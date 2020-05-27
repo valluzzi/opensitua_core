@@ -188,8 +188,10 @@ def rename(filesrc, filedest, overwrite=True):
     """
     rename
     """
+    if normpath(filesrc)==normpath(filedest):
+        return True
     try:
-        if file(filedest) and overwrite:
+        if isfile(filedest)  and overwrite:
             remove(filedest)
         mkdirs(justpath(filedest))
         os.rename(filesrc, filedest)
