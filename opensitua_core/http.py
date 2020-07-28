@@ -50,7 +50,7 @@ class Params:
             for key in q:
                 self.q[key] = [escape(item) for item in q[key]]
 
-        elif environ "REQUEST_METHOD" in environ and environ["REQUEST_METHOD"]=="POST":
+        elif environ and "REQUEST_METHOD" in environ and environ["REQUEST_METHOD"]=="POST":
 
             env_copy = environ.copy()
             env_copy['QUERY_STRING']=''
