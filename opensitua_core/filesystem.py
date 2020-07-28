@@ -200,6 +200,24 @@ def rename(filesrc, filedest, overwrite=True):
         print(ex)
     return False
 
+def copyfile(src, dst, env):
+    """
+    copyfile
+    """
+    return copyfile(sformat(src,env), sformat(dst,env))
+
+def copyshp(src, dst, env):
+    """
+    copyshp
+    """
+    src,dst = sformat(src, env),sformat(dst, env)
+    res = copyfile(src, dst)
+    if justpath(src).lower()=="shp":
+        for ext in ("dbf","shx","prj","qpj"):
+            src = forceext(src,ext)
+            if os.path.isfile(src):
+                copyfile(src, forceext(dst,ext))
+     return res
 
 def remove(files):
     """
