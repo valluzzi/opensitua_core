@@ -66,9 +66,7 @@ class Params:
                 self.q[key] = [escape(item) for item in q[key]]
 
         elif environ:
-            q = {}
-            for key in environ:
-                self.q[key] = [escape(item) for item in q[key]]
+            self.q = environ
 
 
         if environ and "DOCUMENT_ROOT" in environ:
