@@ -44,13 +44,13 @@ class Params:
         self.q = {}
 
 
-        if environ and environ["REQUEST_METHOD"]=="GET":
+        if environ and "REQUEST_METHOD" in environ and environ["REQUEST_METHOD"]=="GET":
             request_body = environ['QUERY_STRING']
             q = parse_qs(request_body)
             for key in q:
                 self.q[key] = [escape(item) for item in q[key]]
 
-        elif environ and environ["REQUEST_METHOD"]=="POST":
+        elif environ "REQUEST_METHOD" in environ and environ["REQUEST_METHOD"]=="POST":
 
             env_copy = environ.copy()
             env_copy['QUERY_STRING']=''
@@ -64,6 +64,12 @@ class Params:
             q = parse_qs(request_body)
             for key in q:
                 self.q[key] = [escape(item) for item in q[key]]
+
+        elif environ:
+            q = {}
+            for key in environ:
+                self.q[key] = [escape(item) for item in q[key]]
+
 
         if environ and "DOCUMENT_ROOT" in environ:
             self.q["DOCUMENT_ROOT"] = environ["DOCUMENT_ROOT"]
