@@ -211,7 +211,7 @@ def copyshp(src, dst, env):
     copyshp
     """
     src,dst = sformat(src, env),sformat(dst, env)
-    res = copyfile(src, dst)
+    res = copyfile(src, dst, env)
     if justpath(src).lower()=="shp":
         for ext in ("dbf","shx","prj","qpj"):
             src = forceext(src,ext)
