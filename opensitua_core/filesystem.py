@@ -217,7 +217,7 @@ def copyshp(src, dst, env):
             src = forceext(src,ext)
             if os.path.isfile(src):
                 copyfile(src, forceext(dst,ext))
-     return res
+    return res
 
 def remove(files):
     """
