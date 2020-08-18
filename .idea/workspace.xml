@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5f34b5f-20e6-41f4-bbf5-1b4393875c1e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opensitua_core/filesystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/filesystem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opensitua_core/stime.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/stime.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +107,12 @@
     <MESSAGE value="added now() function" />
     <MESSAGE value="commit of  20/01/2020&#10;- GetMap" />
     <option name="LAST_COMMIT_MESSAGE" value="commit of  20/01/2020&#10;- GetMap" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="566" y="-934" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595930766775">
+      <screen x="0" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="566" y="-934" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1595930766775" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

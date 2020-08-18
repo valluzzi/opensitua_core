@@ -49,4 +49,4 @@ def total_seconds_from( t1 ):
     """
     total_seconds_from - return seconds elapsed from t1
     """
-    return (dataetime.datetime.now()-t1).total_seconds()
+    return (datetime.datetime.now()-t1).total_seconds()
