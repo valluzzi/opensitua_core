@@ -205,7 +205,7 @@ def copyfile(src, dst, env):
     copyfile
     """
     dst = sformat(dst,env)
-    mkdirs(juspath(dst))
+    mkdirs(justpath(dst))
     return shutil.copyfile(sformat(src,env), dst)
 
 def copyshp(src, dst, env):
