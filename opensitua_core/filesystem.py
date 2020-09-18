@@ -206,7 +206,10 @@ def copyfile(src, dst, env):
     """
     dst = sformat(dst,env)
     mkdirs(justpath(dst))
-    return shutil.copyfile(sformat(src,env), dst)
+    src = sformat(src,env)
+    if os.path.isfile(src):
+        return shutil.copyfile(src, dst)
+    return False
 
 def copyshp(src, dst, env):
     """
