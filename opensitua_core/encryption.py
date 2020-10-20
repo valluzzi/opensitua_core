@@ -31,17 +31,22 @@ def get_key(password=None, filekey=None):
     """
     get_key
     """
-    if password:
+    key = None
+    filekey = filekey if filekey else tempfile.gettempdir() + "/.private.key"
+
+    if password and isinstance(password, (str,)):
         kdf = PBKDF2HMAC(algorithm = hashes.SHA256(), length = 32, salt = os.urandom(16), iterations = 100000)
         key = base64.urlsafe_b64encode(kdf.derive(password.encode("utf-8")))
-    filekey = filekey if filekey else tempfile.gettempdir()+"/.private.key"
-    if not password and os.path.isfile(filekey):
+    elif password and isinstance(password, (bytes,)):
+        key = password
+    elif os.path.isfile(filekey):
         with open(filekey, 'rb') as f:
             key = f.read()
     else:
-        key = key if key else Fernet.generate_key()
+        key = Fernet.generate_key()
         with open(filekey, 'wb') as f:
             f.write(key)
+
     return key
 
 def encrypt(text, key=None):
@@ -82,17 +87,23 @@ def read_encrypted(fileciphered, filekey=None):
     read_encrypted
     """
     text = None
+    # optionally read key
+    key = None
+    if os.path.isfile(filekey):
+        with open(filekey, 'rb') as f:
+            key = f.read()
+
     if os.path.isfile(fileciphered):
         with open(fileciphered, 'rb') as f:
             text = decrypt(f.read(), key)
     return text
 
-def decrypt_file(fileciphered, fileclear=None, key=None):
+def decrypt_file(fileciphered, fileclear=None, filekey=None):
     """
     decrypt_file
     """
     fileclear = fileclear if fileclear else fileciphered.replace(".enc","")
-    text = read_encrypted(fileciphered, key)
+    text = read_encrypted(fileciphered, filekey)
     if text:
         with open(fileclear, 'wb') as s:
             s.write(text)

@@ -58,6 +58,7 @@ def sformat(text, args):
     """
     sformat
     """
+    args = args if args else {}
     for key in args:
         text = text.replace("{%s}" % key, "%s" % (args[key]))
     return text

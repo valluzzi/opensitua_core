@@ -32,7 +32,7 @@ from .encryption import read_encrypted
 # -------------------------------------------------------------------------------
 #   mailto
 # -------------------------------------------------------------------------------
-def system_mail(To, CC="", Body="", Subject=None, fileconf="mail.conf", verbose=False):
+def system_mail(To, Body="", Subject=None, CC="", fileconf="mail.conf", filekey=None, env=None, verbose=False):
     """
     system_mail
     """
@@ -41,13 +41,16 @@ def system_mail(To, CC="", Body="", Subject=None, fileconf="mail.conf", verbose=
     if CC:
         CC = CC.split(",")
 
+    Body = sformat(Body,env)
+
     if not Subject:
         Subject = Body[:16] + "[...]"
-
+    else:
+        Subject=  sformat(Subject,env)
 
     if fileconf and isfile(fileconf):
         if justext(fileconf)=="enc":
-            text = read_encrypted(fileconf)
+            text = read_encrypted(fileconf, filekey)
         else:
             text = filetostr(fileconf)
         conf = json.loads(text)
