@@ -48,7 +48,7 @@ def system_mail(dest, Body="", Subject=None, fileconf="mail.conf", verbose=False
 
         #msg = MIMEMultipart()
         #msg = EmailMessage()
-        msg = MIMEText(Body, "html")
+        msg = MIMEText(Body, "html")lu
         msg['From'] = username
         msg['To'] = ",".join(receivers)
         msg['Subject'] = Subject
