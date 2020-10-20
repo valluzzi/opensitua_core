@@ -36,10 +36,8 @@ def system_mail(To, Body="", Subject=None, CC="", fileconf="mail.conf", filekey=
     """
     system_mail
     """
-    if isstring(To):
-        receivers = To.split(",")
-    if CC:
-        CC = CC.split(",")
+    receivers = listify(To)
+    CC = listify(CC)
 
     Body = sformat(Body,env)
 
@@ -48,7 +46,7 @@ def system_mail(To, Body="", Subject=None, CC="", fileconf="mail.conf", filekey=
     else:
         Subject=  sformat(Subject,env)
 
-    if fileconf and isfile(fileconf):
+    if receivers and fileconf and isfile(fileconf):
         if justext(fileconf)=="enc":
             text = read_encrypted(fileconf, filekey)
         else:
@@ -64,7 +62,7 @@ def system_mail(To, Body="", Subject=None, CC="", fileconf="mail.conf", filekey=
         msg = MIMEText(Body, "html")
         msg['From'] = username
         msg['To'] = ",".join(receivers)
-        if CC:
+        if len(CC):
             msg['CC'] = ",".join(CC)
         msg['Subject'] = Subject
 
