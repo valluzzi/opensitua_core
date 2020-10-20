@@ -35,5 +35,6 @@ setuptools.setup(
                       'six', 'argparse', 'xmljson',
                       'openpyxl','requests',
                       'xlrd', 'xlwt', 'xlutils', 'numpy',
-                      'rarfile']
+                      'rarfile',
+                      'cryptography']
 )

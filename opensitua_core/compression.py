@@ -30,8 +30,7 @@ import os
 from .strings import *
 from .filesystem import *
 
-def \
-        compress(filenames, filezip="", removesrc=False):
+def compress(filenames, filezip="", removesrc=False):
     """
     compress
     """

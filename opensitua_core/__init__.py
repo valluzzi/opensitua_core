@@ -24,10 +24,11 @@
 #-------------------------------------------------------------------------------
 
 
-__version__ = '0.0.102'
+__version__ = '0.0.103'
 
 from .platform import *
 from .filesystem import *
+from .encryption import *
 from .compression import *
 from .strings import *
 from .execution import *
