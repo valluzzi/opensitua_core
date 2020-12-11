@@ -218,10 +218,9 @@ def copyshp(src, dst, env):
     src,dst = sformat(src, env),sformat(dst, env)
     res = copyfile(src, dst, env)
     if justext(src).lower()=="shp":
-        for ext in ("dbf","shx","prj","qpj"):
+        for ext in ("dbf","shx","prj","qpj","qml","qix","idx","dat","sbn","sbx","fbn","fbx","ain","aih","atx"):
             src = forceext(src,ext)
-            if os.path.isfile(src):
-                copyfile(src, forceext(dst,ext), env)
+            copyfile(src, forceext(dst,ext), env)
     return res
 
 def remove(files):
