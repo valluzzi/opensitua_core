@@ -66,7 +66,7 @@ class Params:
             q = parse_qs(request_body)
             for key in q:
                 self.q[key] = [escape(item) for item in q[key]]
-                
+
         elif environ:
             self.q = environ
 
