@@ -23,6 +23,20 @@
 # -----------------------------------------------------------------------------
 import os,sys,time
 import multiprocessing
+import signal
+
+def kill_process(pid, verbose=False):
+    """
+    kill_process
+    """
+    try:
+        os.kill(pid, signal.SIGTERM)
+        res = True
+    except Exception as ex:
+        if verbose:
+            print(ex)
+        res = False
+    return res
 
 def cpu_count():
     """
