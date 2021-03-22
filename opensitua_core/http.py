@@ -81,6 +81,12 @@ class Params:
             else:
                 self.q["HTTP_COOKIE"] = environ["HTTP_COOKIE"]
 
+            HTTP_COOKIE = self.q["HTTP_COOKIE"]
+            if "__username__" in HTTP_COOKIE:
+                self.q["__username__"] = HTTP_COOKIE["__username__"]
+            if "__token__" in HTTP_COOKIE:
+                self.q["__token__"] = HTTP_COOKIE["__token__"]
+
         if "encoded" in self.q and self.q["encoded"] in ("true","1",1):
             for key in q:
                 if not key in ("encoded","encrypted"):
