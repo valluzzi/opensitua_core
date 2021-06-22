@@ -59,10 +59,10 @@ def compress(filenames, filezip="", removesrc=False):
     if (justext(filezip) == "tgz"):
         with tarfile.open(filezip, "w") as archive:
             for filename in filenames:
-                if file(filename):
+                if os.path.isfile(filename):
                     archive.add(filename)
 
-    if file(filezip):
+    if os.path.isfile(filezip):
         if removesrc:
             remove(filenames)
         return filezip

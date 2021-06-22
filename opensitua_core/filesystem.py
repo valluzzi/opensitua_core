@@ -121,6 +121,8 @@ def strtofile(text, filename, append=False):
     """
     try:
         flag = "a" if append else "w"
+        if isinstance(text,(str,)):
+            text = text.encode("utf-8")
         if isinstance(text,(bytes,)):
             flag+='b'
         mkdirs(justpath(filename))
@@ -138,7 +140,7 @@ def filetostr(filename):
     filetostr
     """
     try:
-        with open(filename, "r") as stream:
+        with open(filename, "r", encoding="utf-8") as stream:
             return stream.read()
     except:
         return None
@@ -148,7 +150,7 @@ def filetoarray(filename):
     filetoarray
     """
     try:
-        with open(filename, "r") as stream:
+        with open(filename, "r", encoding="utf-8") as stream:
             return stream.readlines()
     except:
         return []
@@ -157,7 +159,7 @@ def filesize(filename):
     """
     filesize
     """
-    if file(filename):
+    if os.path.isfile(filename):
         return os.path.getsize(filename)
     else:
         return -1
@@ -166,7 +168,7 @@ def filectime(filename):
     """
     filectime - get the creation date
     """
-    if file(filename) or directory(filename):
+    if os.path.isfile(filename) or directory(filename):
         unixtimestamp = os.path.getctime(filename)
         return strftime("%Y-%m-%d %H:%M:%S",datetime.datetime.fromtimestamp(unixtimestamp))
     else:
@@ -191,7 +193,7 @@ def rename(filesrc, filedest, overwrite=True):
     if normpath(filesrc)==normpath(filedest):
         return True
     try:
-        if isfile(filedest)  and overwrite:
+        if os.path.isfile(filedest)  and overwrite:
             remove(filedest)
         mkdirs(justpath(filedest))
         os.rename(filesrc, filedest)
@@ -386,7 +388,7 @@ def md5sum(filename):
     """
     md5sum - returns themd5 of the file
     """
-    if file(filename):
+    if os.path.isfile(filename):
         f = open(filename, mode='rb')
         d = hashlib.md5()
         while True:

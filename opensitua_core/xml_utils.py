@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------------
 from .strings import *
 from .filesystem import *
-import json
+import os,json
 from xmljson import yahoo as bf
 from xml.etree.ElementTree import fromstring
 
@@ -53,7 +53,7 @@ def parsexml(filename, patching=True):
         return filename
     elif isstring(filename) and filename.startswith("<"):
         text = filename
-    elif file(filename):
+    elif os.path.isfile(filename):
         text = filetostr(filename)
     else:
         return ""
