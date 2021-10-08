@@ -15,7 +15,7 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 #
-# Name:        http.py.py
+# Name:        http.py
 # Purpose:
 #
 # Author:      Luzzi Valerio

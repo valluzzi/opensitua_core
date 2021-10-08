@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5f34b5f-20e6-41f4-bbf5-1b4393875c1e" name="Default Changelist" comment="commit of  20/01/2020&#10;- GetMap">
+      <change afterPath="$PROJECT_DIR$/opensitua_core/ftp_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/opensitua_core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/opensitua_core.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/compression.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/compression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/filesystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/filesystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opensitua_core/xml_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/xml_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opensitua_core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opensitua_core/http.py" beforeDir="false" afterPath="$PROJECT_DIR$/opensitua_core/http.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,11 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="931666d7-3ae8-4a0a-9374-a97a0363c160" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/opensitua_core/http.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/opensitua_core/filesystem.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/opensitua_core/compression.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1aLIaZDu1cbOJOWcFkSxJarCtG6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,6 +62,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/opensitua_core" />
     <property name="settings.editor.selected.configurable" value="ics" />
